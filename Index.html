@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <title>🎬 Movie Downloader Tony Stark</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+
+
+    body {
+
+      margin: 0;
+
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      color: #fff;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;
+
+    }
+
+
+
+    .container {
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border-radius: 20px;
+
+      padding: 40px 30px;
+
+      width: 100%;
+
+      max-width: 420px;
+
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+      backdrop-filter: blur(10px);
+
+      text-align: center;
+
+    }
+
+
+
+    h2 {
+
+      color: #00e676;
+
+      margin-bottom: 10px;
+
+      font-size: 28px;
+
+    }
+
+
+
+    p {
+
+      color: #ccc;
+
+      font-size: 16px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+
+    #folderStatus {
+
+      color: #90ee90;
+
+      font-size: 14px;
+
+      margin: -10px 0 20px;
+
+    }
+
+
+
+    .button {
+
+      display: inline-block;
+
+      width: 100%;
+
+      padding: 14px;
+
+      margin-bottom: 15px;
+
+      background-color: #00e676;
+
+      color: #000;
+
+      font-weight: 600;
+
+      font-size: 16px;
+
+      border: none;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      transition: background-color 0.3s ease;
+
+    }
+
+
+
+    .button:hover {
+
+      background-color: #00c853;
+
+    }
+
+
+
+    #progressContainer {
+
+      margin-top: 20px;
+
+      text-align: left;
+
+      display: none;
+
+    }
+
+
+
+    .progress-bar {
+
+      width: 100%;
+
+      background-color: #333;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      height: 20px;
+
+    }
+
+
+
+    .progress-bar-fill {
+
+      background: #00e676;
+
+      height: 100%;
+
+      width: 0%;
+
+      transition: width 0.3s ease-in-out;
+
+    }
+
+
+
+    #progressText {
+
+      margin-top: 10px;
+
+      font-size: 14px;
+
+      color: #eee;
+
+    }
+
+
+
+    #fileInput {
+
+      display: none;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>🎬 Movie Downloader</h2>
+
+    <p>Select the folder where you want to download movies.
+  <br> Note: Always select DCMI folder to avoid errors in mobile.
+    </p>
+
+    <button type="button" class="button" id="selectFolderBtn">📂 Select Folder</button>
+
+    <p id="folderStatus"></p>
+
+    <form id="uploadForm">
+
+      <input type="file" id="fileInput" webkitdirectory multiple required />
+
+      <button type="submit" class="button">Next ➡️</button>
+
+    </form>
+
+    <div id="progressContainer">
+
+      <div class="progress-bar">
+
+        <div class="progress-bar-fill" id="progressFill"></div>
+
+      </div>
+
+      <div id="progressText"></div>
+
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
